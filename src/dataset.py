@@ -13,8 +13,7 @@ def get_mnist_loaders(batch_size=64, data_dir="../data"):
     mean, std = all_images.mean().item(), all_images.std().item()
 
     # Transform
-    transform = transforms.Compose([transforms.ToTensor(),
-        transforms.Normalize((mean,), (std,))])
+    transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((mean,), (std,))])
 
     train_ds = datasets.MNIST(root=data_dir,train=True,download=True,transform=transform)
     test_ds = datasets.MNIST(root=data_dir,train=False,download=True,transform=transform)
