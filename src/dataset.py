@@ -26,7 +26,7 @@ def get_mnist_loaders(batch_size=64, data_dir="../data"):
     return train_loader, test_loader
 
 if __name__ == "__main__":
-    # Quick check: download with batch size 1
+    # Check
     train_loader, test_loader = get_mnist_loaders(batch_size=1, data_dir="../data")
     print(f"Downloaded MNIST: {len(train_loader)} train batches, {len(test_loader)} test batches")
 
