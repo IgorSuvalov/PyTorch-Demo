@@ -42,5 +42,5 @@ jupyter notebook notebooks/demo.ipynb
 ```
 
 ## Results
-Best model's **test accuracy** ~99%
+Best **test accuracy** ~99%
 
