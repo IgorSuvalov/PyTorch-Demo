@@ -65,6 +65,7 @@ def evaluate(model, loader, device):
             total += labels.size(0)
     return 100 * correct/total
 
+
 if __name__ == "__main__":
     ckpt, acc = train()
     print(f"Best checkpoint is at {ckpt} with accuracy {acc:.2f}%")
