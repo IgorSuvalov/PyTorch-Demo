@@ -1,7 +1,7 @@
 # PyTorch-Demo
 
 
-## Project Overwiev
+## Project Overview
 A CNN in PyTorch for image recognition:
 - Load and preprocess the MNIST dataset
 - Train the CNN model
@@ -12,9 +12,9 @@ A CNN in PyTorch for image recognition:
 ## How to install
 
 ```bash
-git clone https://github.com/IgorSuvalov/PyTorch-Demo.git
-cd pytorch-image-demo
-python -m -venv .venv
+git clone https://github.com/IgorSuvalov/PyTorch‑Demo.git
+cd PyTorch-Demo
+python -m venv .venv
 # Windows PowerShell
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
@@ -32,7 +32,7 @@ jupyter notebook notebooks/demo.ipynb
 
 ## Project Structure
 ```bash
--scr/              # Data loader, model, training
+-src/              # Data loader, model, training
 -tests/            # unit tests
 -models/           # Best model
 -data/             # MNIST dataset
@@ -43,4 +43,7 @@ jupyter notebook notebooks/demo.ipynb
 
 ## Results
 Best **test accuracy** ~99%
+
+## License
+MIT
 
