@@ -17,6 +17,8 @@ def train(batch_size=64, epochs=5, lr=1e-3, data_dir="../data", model_dir="../mo
 
     os.makedirs(model_dir, exist_ok=True)
 
+    best_acc = 0.0
+    best_path = None
 
     for epoch in range(1,epochs + 1):
         model.train()
@@ -38,6 +40,18 @@ def train(batch_size=64, epochs=5, lr=1e-3, data_dir="../data", model_dir="../mo
         test_acc = evaluate(model, test_loader, device)
         print(f"Epoch {epoch} complete. Test accuracy: {test_acc:.2f}%\n")
 
+        if test_acc > best_acc:
+            best_acc = test_acc
+            best_path = os.path.join(model_dir, "best_model.pth")
+            torch.save(model.state_dict(), best_path)
+            print(f" New best model saved to {best_path}\n")
+        else:
+            print()
+
+
+    print(f"Training complete. Best test accuracy: {best_acc:.2f}%")
+    return best_path, best_acc
+
 
 def evaluate(model, loader, device):
     model.eval()
@@ -52,6 +66,7 @@ def evaluate(model, loader, device):
     return 100 * correct/total
 
 if __name__ == "__main__":
-    train()
+    ckpt, acc = train()
+    print(f"Best checkpoint is at {ckpt} with accuracy {acc:.2f}%")
 
 
