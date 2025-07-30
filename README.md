@@ -18,21 +18,29 @@ python -m -venv .venv
 # Windows PowerShell
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
+```
 
 ## How to use
--To train:
-  python -m src.train
--To run tests:
-  pytest -q
+```bash
+# To train the model:
+python -m src.train
+# To run tests:
+pytest -q
+# To launch the notebook:
+jupyter notebook notebooks/demo.ipynb
+```
 
 ## Project Structure
-scr/        # Data loader, model, training
-tests/      # unit tests
-models/     # Best model
-data/       # MNIST dataset
-notebooks/  # Model overview and visualization
-README.md
-requirements.txt
+```bash
+-scr/              # Data loader, model, training
+-tests/            # unit tests
+-models/           # Best model
+-data/             # MNIST dataset
+-notebooks/        # Model overview and visualization
+-README.md         # This file
+-requirements.txt  # Python packages
+```
 
 ## Results
-Best model's test accuracy is $~99%$ 
+Best model's **test accuracy** ~99%
+
