@@ -12,8 +12,8 @@ class SimpleCNN(nn.Module):
         self.conv3 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, padding=1)
 
         # Feature‑map prep
-        self.fc1 = nn.Linear(64 * 3 * 3, 128)  # Fully connected: 64*3*3 to 128
-        self.fc2 = nn.Linear(128, 10)          # Final output: 128 to 10 classes
+        self.fc1 = nn.Linear(64 * 3 * 3, 128)  # 64*3*3 to 128
+        self.fc2 = nn.Linear(128, 10)          # 128 to 10
 
     def forward(self, x):
         # x shape: (batch, 1, 28, 28)
