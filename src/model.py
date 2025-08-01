@@ -1,5 +1,6 @@
 import torch.nn as nn
 import torch.nn.functional as F
+from torchvision.models import resnet18
 
 class SimpleCNN(nn.Module):
     def __init__(self):
@@ -27,3 +28,4 @@ class SimpleCNN(nn.Module):
         x = F.relu(self.fc1(x))          # (batch, 128)
         x = self.fc2(x)                  # (batch, 10)
         return x
+
