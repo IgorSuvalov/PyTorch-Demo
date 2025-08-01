@@ -4,7 +4,9 @@ from src.dataset import get_mnist_loaders
 from src.dataset import get_cifar10_loaders
 
 def test_get_mnist_loaders_shapes(tmp_path):
-
+    """
+    Unit test to check the output shape
+    """
     train_loader, test_loader = get_mnist_loaders(batch_size=4, data_dir=str(tmp_path/"data"))
 
     images, labels = next(iter(train_loader))
@@ -17,7 +19,9 @@ def test_get_mnist_loaders_shapes(tmp_path):
 
 
 def test_get_cifar10_loaders_shapes(tmp_path):
-
+    """
+    Unit test to check the output shape number of labels
+    """
     train_loader, test_loader = get_cifar10_loaders(batch_size=4, data_dir=str(tmp_path / "data"))
 
     images, labels = next(iter(train_loader))

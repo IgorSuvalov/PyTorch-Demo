@@ -3,6 +3,9 @@ from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 
 def get_mnist_loaders(batch_size=64, data_dir="../data"):
+    """
+    Returns Dataloaders for MNIST
+    """
     # ensure data/ exists
     os.makedirs(data_dir, exist_ok=True)
 
@@ -27,13 +30,16 @@ def get_mnist_loaders(batch_size=64, data_dir="../data"):
 
 
 def get_cifar10_loaders(batch_size=64, data_dir="../data", augment=True):
+    """
+    Returns Dataloaders for CIFAR-10
+    """
     cifar_dir = os.path.join(data_dir, "cifar10")
     os.makedirs(cifar_dir, exist_ok=True)
 
     # Create a temporary dataset to calculate the mean and std
     temp_ds = datasets.CIFAR10(root=cifar_dir, train=True, download=True,transform=transforms.ToTensor())
     temp_loader = DataLoader(temp_ds, batch_size=len(temp_ds), shuffle=False)
-    all_images, _ = next(iter(temp_loader)) #shape (50000, 3, 32, 32)
+    all_images, _ = next(iter(temp_loader))
     mean, std = all_images.mean(dim=(0, 2, 3)), all_images.std(dim=(0, 2, 3))
 
     # Use random crop and horizontal flip for better training and normalize, or just normalize
