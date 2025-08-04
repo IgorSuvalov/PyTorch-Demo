@@ -2,7 +2,7 @@
 
 
 ## Project Overview
-A simple CNN and a ResNet-18 comparison in PyTorch for image recognition:
+A simple CNN and ResNet-18 comparison in PyTorch for image recognition:
 - Data loading & preprocessing for MNIST and CIFAR-10  
 - Reusable training & evaluation code  
 - Hyperparameter sweeps and visualization in Jupyter 
