@@ -22,7 +22,7 @@ pip install -r requirements.txt
 
 ## Project Structure
 ```bash
--src/              # Data loader, CNN model, resnet model, training
+-src/              # Data loader, CNN model, ResNet model, training
 -tests/            # unit tests
 -models/           # Best model checkpoints
 -data/             # MNIST and CIFAR-10 datasets
@@ -47,7 +47,9 @@ pytest --maxfail=1 --disable-warnings -q
 ```
 
 ## Results
-Best **test accuracy** on MNIST for both CNN and Resnet ~99%. Best test accuracy on CIFAR-10 for Resnet ~74 and for CNN ~72
+Best **test accuracy** on MNIST for both CNN and ResNet ~99%.
+
+Best **test accuracy** on CIFAR-10 for ResNet ~74% and for CNN ~72%
 
 ## License
 MIT
